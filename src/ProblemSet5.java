@@ -22,15 +22,15 @@ public class ProblemSet5 {
         ProblemSet5 ps = new ProblemSet5();
 
         // EXERCISE ONE
-        System.out.println(ps.surroundMe("cde", "abfg"));
-        System.out.println(ps.surroundMe(null, "####"));
-        System.out.println(ps.surroundMe("abc", null));
-        System.out.println(ps.surroundMe("abc", "123"));
+        // System.out.println(ps.surroundMe("cde", "abfg"));
+        // System.out.println(ps.surroundMe(null, "####"));
+        // System.out.println(ps.surroundMe("abc", null));
+        // System.out.println(ps.surroundMe("abc", "123"));
         // EXERCISE TWO
-        // System.out.println(ps.endsMeet("abcdefg", 2));
-        // System.out.println(ps.endsMeet(null, 2));
-        // System.out.println(ps.endsMeet("", 2));
-        // System.out.println(ps.endsMeet("abc", -1));
+        System.out.println(ps.endsMeet("abcdefg", 2));
+        System.out.println(ps.endsMeet(null, 2));
+        System.out.println(ps.endsMeet("", 2));
+        System.out.println(ps.endsMeet("abc", -1));
     }
 
     /*
@@ -62,7 +62,17 @@ public class ProblemSet5 {
      */
 
     public String endsMeet(String text, int n) {
-        return "Hello";
+        String finalString = text;
+        if (text == null) {
+            return text;
+        } else if (text.length() > 10 || text.length() < 1) {
+            return text;
+        } else if (n > text.length() || n < 1){
+            return text;
+        } else {
+            finalString = text.substring(0, n) + text.substring(text.length() - n, text.length());
+            return finalString;
+        }
     }
 
     /*
