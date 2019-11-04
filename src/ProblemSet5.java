@@ -19,7 +19,18 @@
 public class ProblemSet5 {
 
     public static void main(String[] args) {
+        ProblemSet5 ps = new ProblemSet5();
 
+        // EXERCISE ONE
+        System.out.println(ps.surroundMe("cde", "abfg"));
+        System.out.println(ps.surroundMe(null, "####"));
+        System.out.println(ps.surroundMe("abc", null));
+        System.out.println(ps.surroundMe("abc", "123"));
+        // EXERCISE TWO
+        // System.out.println(ps.endsMeet("abcdefg", 2));
+        // System.out.println(ps.endsMeet(null, 2));
+        // System.out.println(ps.endsMeet("", 2));
+        // System.out.println(ps.endsMeet("abc", -1));
     }
 
     /*
@@ -30,7 +41,17 @@ public class ProblemSet5 {
      */
 
     public String surroundMe(String in, String out) {
-
+        String finalString = in;
+        if (in == null) {
+            return in;
+        } else if (out == null) {
+            return in;
+        } else if (out.length() != 4) {
+            return in;
+        } else {
+            finalString = out.substring(0, 2) + in + out.substring(2, 4);
+            return finalString;
+        }
     }
 
     /*
@@ -41,7 +62,7 @@ public class ProblemSet5 {
      */
 
     public String endsMeet(String text, int n) {
-
+        return "Hello";
     }
 
     /*
@@ -51,7 +72,7 @@ public class ProblemSet5 {
      */
 
     public String middleMan(String text) {
-
+        return "Hello";
     }
 
     /*
@@ -62,7 +83,7 @@ public class ProblemSet5 {
      */
 
     public boolean isCentered(String text, String target) {
-
+        return true;
     }
 
     /*
@@ -72,7 +93,7 @@ public class ProblemSet5 {
      */
 
     public int countMe(String text, char suffix) {
-
+        return 999;
     }
 
     /*
@@ -82,7 +103,7 @@ public class ProblemSet5 {
      */
 
     public int triplets(String text) {
-
+        return 7;
     }
 
     /*
@@ -92,7 +113,7 @@ public class ProblemSet5 {
      */
 
     public long addMe(String text) {
-
+        return 999;
     }
 
     /*
@@ -102,8 +123,9 @@ public class ProblemSet5 {
      */
 
     public long sequence(String text) {
-
+        return 999;
     }
+
 
     /*
      * Exercise 9.
@@ -113,7 +135,7 @@ public class ProblemSet5 {
      */
 
     public String intertwine(String a, String b) {
-
+        return "Hello";
     }
 
     /*
@@ -123,6 +145,6 @@ public class ProblemSet5 {
      */
 
     public boolean isPalindrome(String text) {
-
+        return true;
     }
 }
