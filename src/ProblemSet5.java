@@ -37,12 +37,16 @@ public class ProblemSet5 {
         // System.out.println(ps.middleMan("12"));
         // System.out.println(ps.middleMan("a"));
         // EXERCISE FOUR
-        System.out.println(ps.isCentered("abcdefg", "cde"));
-        System.out.println(ps.isCentered("abcdefg", "abc"));
-        System.out.println(ps.isCentered(null, "abc"));
-        System.out.println(ps.isCentered("abcd", "abc"));
-        System.out.println(ps.isCentered("abc", null));
-        System.out.println(ps.isCentered("abcdefg", "cd"));
+        // System.out.println(ps.isCentered("abcdefg", "cde"));
+        // System.out.println(ps.isCentered("abcdefg", "abc"));
+        // System.out.println(ps.isCentered(null, "abc"));
+        // System.out.println(ps.isCentered("abcd", "abc"));
+        // System.out.println(ps.isCentered("abc", null));
+        // System.out.println(ps.isCentered("abcdefg", "cd"));
+        // EXERCISE FIVE
+        System.out.println(ps.countMe("I am an example sentence", 'e'));
+        System.out.println(ps.countMe(null, 'a'));
+        System.out.println(ps.countMe("abc$ def$", '$'));
         // System.out.println(ps.NAME());
     }
 
@@ -143,7 +147,21 @@ public class ProblemSet5 {
      */
 
     public int countMe(String text, char suffix) {
-        return 999;
+        int suffixCounter = 0;
+        if (text == null) {
+            return -1;
+        } else if (!(suffix >= 'a' && suffix <= 'z') || (suffix >= 'A' && suffix <= 'Z')) {
+            return -1;
+        } else {
+            String[] arrayOfWords = text.split(" ");
+            for (String word : arrayOfWords) {
+                String lastChar = String.valueOf(word.charAt(word.length()-1));
+                if (lastChar.equals(String.valueOf(suffix))) {
+                        suffixCounter++;
+                }
+            }
+            return suffixCounter;
+        }
     }
 
     /*
