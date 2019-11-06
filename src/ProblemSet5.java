@@ -44,9 +44,14 @@ public class ProblemSet5 {
         // System.out.println(ps.isCentered("abc", null));
         // System.out.println(ps.isCentered("abcdefg", "cd"));
         // EXERCISE FIVE
-        System.out.println(ps.countMe("I am an example sentence", 'e'));
-        System.out.println(ps.countMe(null, 'a'));
-        System.out.println(ps.countMe("abc$ def$", '$'));
+        // System.out.println(ps.countMe("I am an example sentence", 'e'));
+        // System.out.println(ps.countMe(null, 'a'));
+        // System.out.println(ps.countMe("abc$ def$", '$'));
+        // EXERCISE SIX
+        System.out.println(ps.triplets("aaabbbccc"));
+        System.out.println(ps.triplets("aaaa"));
+        System.out.println(ps.triplets("abc"));
+        System.out.println(ps.triplets(null));
         // System.out.println(ps.NAME());
     }
 
@@ -171,7 +176,17 @@ public class ProblemSet5 {
      */
 
     public int triplets(String text) {
-        return 7;
+        int numOfTriplets = 0;
+        if (text == null) {
+            return -1;
+        } else {
+            for (int i = 0; i < text.length() - 2; i++) {
+                if (text.charAt(i) == text.charAt(i + 1) && text.charAt(i) == text.charAt(i + 2)) {
+                    numOfTriplets++;
+                }
+            }
+            return numOfTriplets;
+        }
     }
 
     /*
