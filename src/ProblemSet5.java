@@ -48,10 +48,14 @@ public class ProblemSet5 {
         // System.out.println(ps.countMe(null, 'a'));
         // System.out.println(ps.countMe("abc$ def$", '$'));
         // EXERCISE SIX
-        System.out.println(ps.triplets("aaabbbccc"));
-        System.out.println(ps.triplets("aaaa"));
-        System.out.println(ps.triplets("abc"));
-        System.out.println(ps.triplets(null));
+        // System.out.println(ps.triplets("aaabbbccc"));
+        // System.out.println(ps.triplets("aaaa"));
+        // System.out.println(ps.triplets("abc"));
+        // System.out.println(ps.triplets(null));
+        // EXERCISE SEVEN
+        System.out.println(ps.addMe("123 abc 123"));
+        System.out.println(ps.addMe("abcdefghijk"));
+        System.out.println(ps.addMe(null));
         // System.out.println(ps.NAME());
     }
 
@@ -155,7 +159,7 @@ public class ProblemSet5 {
         int suffixCounter = 0;
         if (text == null) {
             return -1;
-        } else if (!(suffix >= 'a' && suffix <= 'z') || (suffix >= 'A' && suffix <= 'Z')) {
+        } else if (!((suffix >= 'a' && suffix <= 'z') || (suffix >= 'A' && suffix <= 'Z'))) {
             return -1;
         } else {
             String[] arrayOfWords = text.split(" ");
@@ -196,7 +200,19 @@ public class ProblemSet5 {
      */
 
     public long addMe(String text) {
-        return 999;
+        long sum = 0;
+        if (text == null) {
+            return -1;
+        } else {
+            for (int i = 0; i != text.length(); i++) {
+                char digit = text.charAt(i);
+                if (Character.isDigit(digit)) {
+                    // it is a digit and that is good
+                    sum += Character.getNumericValue(text.charAt(i));
+                }
+            }
+            return sum;
+        }
     }
 
     /*
