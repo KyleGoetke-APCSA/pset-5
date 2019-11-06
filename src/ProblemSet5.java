@@ -53,9 +53,14 @@ public class ProblemSet5 {
         // System.out.println(ps.triplets("abc"));
         // System.out.println(ps.triplets(null));
         // EXERCISE SEVEN
-        System.out.println(ps.addMe("123 abc 123"));
-        System.out.println(ps.addMe("abcdefghijk"));
-        System.out.println(ps.addMe(null));
+        // System.out.println(ps.addMe("123 abc 123"));
+        // System.out.println(ps.addMe("abcdefghijk"));
+        // System.out.println(ps.addMe(null));
+        // EXERCISE EIGHT
+        System.out.println(ps.sequence("abbcccdddd"));
+        System.out.println(ps.sequence("aAabBbBb"));
+        System.out.println(ps.sequence(""));
+        System.out.println(ps.sequence(null));
         // System.out.println(ps.NAME());
     }
 
@@ -222,7 +227,15 @@ public class ProblemSet5 {
      */
 
     public long sequence(String text) {
-        return 999;
+        long longestLength = 0;
+        if (text == null) {
+            return -1;
+        } else {
+            // code
+            // take code from earlier exercise (5?) that splits it up into an array
+            // then, compare the length of each BOI in the array
+            return longestLength;
+        }
     }
 
 
