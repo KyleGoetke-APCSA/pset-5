@@ -227,13 +227,28 @@ public class ProblemSet5 {
      */
 
     public long sequence(String text) {
-        long longestLength = 0;
+        long longestLength = 1;
+        long sequenceLength = 1;
+        char char1 = ' ';
+        char char2 = ' ';
         if (text == null) {
             return -1;
         } else {
-            // code
-            // take code from earlier exercise (5?) that splits it up into an array
-            // then, compare the length of each BOI in the array
+            for (int i = 1; i < text.length(); i++ ) {
+                char1 = text.charAt(i-1);
+                char2 = text.charAt(i);
+                if (char1 == char2) {
+                    sequenceLength -= -1;
+                    if (sequenceLength > longestLength) {
+                        longestLength = sequenceLength;
+                    }
+                } else {
+                    sequenceLength = 1;
+                }
+            }
+            if (text.length() == 0) {
+                longestLength = 0;
+            }
             return longestLength;
         }
     }
