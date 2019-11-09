@@ -57,10 +57,16 @@ public class ProblemSet5 {
         // System.out.println(ps.addMe("abcdefghijk"));
         // System.out.println(ps.addMe(null));
         // EXERCISE EIGHT
-        System.out.println(ps.sequence("abbcccdddd"));
-        System.out.println(ps.sequence("aAabBbBb"));
-        System.out.println(ps.sequence(""));
-        System.out.println(ps.sequence(null));
+        // System.out.println(ps.sequence("abbcccdddd"));
+        // System.out.println(ps.sequence("aAabBbBb"));
+        // System.out.println(ps.sequence(""));
+        // System.out.println(ps.sequence(null));
+        // EXERCISE NINE
+        System.out.println(ps.intertwine("aceg", "bdfh"));
+        System.out.println(ps.intertwine("abc", "12345"));
+        System.out.println(ps.intertwine(null, "abcd"));
+        System.out.println(ps.intertwine("abcd", null));
+        System.out.println(ps.intertwine(null, null));
         // System.out.println(ps.NAME());
     }
 
@@ -262,7 +268,29 @@ public class ProblemSet5 {
      */
 
     public String intertwine(String a, String b) {
-        return "Hello";
+        long longestString = 0;
+        String intertwined = "";
+
+        if (a == null || b == null) {
+            return null;
+        } else {
+            if (a.length() > b.length()) {
+                longestString = a.length();
+            } else {
+                longestString = b.length();
+            }
+            for (int i = 0; i < longestString; i++) {
+                if (i < a.length() && i < b.length()) {
+                    intertwined += String.valueOf(a.charAt(i));
+                    intertwined += String.valueOf(b.charAt(i));
+                } else if (i < a.length()) {
+                    intertwined += String.valueOf(a.charAt(i));
+                } else if (i < b.length()) {
+                    intertwined += String.valueOf(b.charAt(i));
+                }
+            }
+            return intertwined;
+        }
     }
 
     /*
