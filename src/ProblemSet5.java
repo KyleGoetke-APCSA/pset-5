@@ -62,11 +62,15 @@ public class ProblemSet5 {
         // System.out.println(ps.sequence(""));
         // System.out.println(ps.sequence(null));
         // EXERCISE NINE
-        System.out.println(ps.intertwine("aceg", "bdfh"));
-        System.out.println(ps.intertwine("abc", "12345"));
-        System.out.println(ps.intertwine(null, "abcd"));
-        System.out.println(ps.intertwine("abcd", null));
-        System.out.println(ps.intertwine(null, null));
+        // System.out.println(ps.intertwine("aceg", "bdfh"));
+        // System.out.println(ps.intertwine("abc", "12345"));
+        // System.out.println(ps.intertwine(null, "abcd"));
+        // System.out.println(ps.intertwine("abcd", null));
+        // System.out.println(ps.intertwine(null, null));
+        // EXERCISE TEN
+        System.out.println(ps.isPalindrome("racecar"));
+        System.out.println(ps.isPalindrome("Madam"));
+        System.out.println(ps.isPalindrome(null));
         // System.out.println(ps.NAME());
     }
 
@@ -300,6 +304,19 @@ public class ProblemSet5 {
      */
 
     public boolean isPalindrome(String text) {
-        return true;
+        boolean palindrome = false;
+        String reversed = "";
+
+        if (text == null) {
+            return false;
+        } else {
+            for (int i = text.length()-1; i >= 0; i--) {
+                reversed += String.valueOf(text.charAt(i));
+            }
+            if (text.equals(reversed)) {
+                palindrome = true;
+            }
+            return palindrome;
+        }
     }
 }
